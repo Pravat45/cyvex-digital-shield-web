@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -106,7 +107,7 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-cyber-red to-cyber-orange bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-red-500 bg-clip-text text-transparent;
   }
   
   .red-glow {
