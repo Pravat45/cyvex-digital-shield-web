@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,6 +9,9 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Career from "./pages/Career";
+import Industries from "./pages/Industries";
+import Technologies from "./pages/Technologies";
+import Layout from "./components/layout/Layout";
 
 const queryClient = new QueryClient();
 
@@ -17,14 +21,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/careers" element={<Career />} />
-          {/* Additional routes will be added as we create the pages */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/careers" element={<Career />} />
+            <Route path="/industries" element={<Industries />} />
+            <Route path="/technologies" element={<Technologies />} />
+            {/* Additional routes will be added as we create the pages */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
