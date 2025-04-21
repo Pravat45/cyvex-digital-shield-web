@@ -109,8 +109,8 @@ const Navbar = () => {
 
           {/* Get Started button */}
           <div className="hidden lg:block">
-            <Button variant="default" className="font-medium">
-              Get Started
+            <Button variant="default" className="font-medium" asChild>
+              <Link to="/contact">Get Started</Link>
             </Button>
           </div>
 
@@ -173,7 +173,9 @@ const Navbar = () => {
                 </Link>
               ))}
             <div className="pt-2">
-              <Button className="w-full font-medium">Get Started</Button>
+              <Button className="w-full font-medium" asChild>
+                <Link to="/contact" onClick={() => setIsOpen(false)}>Get Started</Link>
+              </Button>
             </div>
           </div>
         </div>

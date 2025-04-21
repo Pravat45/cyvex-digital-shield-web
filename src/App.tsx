@@ -11,6 +11,9 @@ import NotFound from "./pages/NotFound";
 import Career from "./pages/Career";
 import Industries from "./pages/Industries";
 import Technologies from "./pages/Technologies";
+import OurWork from "./pages/OurWork";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
 import Layout from "./components/layout/Layout";
 
 const queryClient = new QueryClient();
@@ -29,7 +32,9 @@ const App = () => (
             <Route path="/careers" element={<Career />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/technologies" element={<Technologies />} />
-            {/* Additional routes will be added as we create the pages */}
+            <Route path="/our-work" element={<OurWork />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
