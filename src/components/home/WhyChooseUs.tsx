@@ -7,22 +7,24 @@ const features = [
     title: "Expert Team",
     description:
       "Our team consists of certified security experts, IT professionals, and healthcare specialists with years of industry experience.",
+    img: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=440&q=80",
   },
   {
     icon: ShieldCheck,
     title: "Tailored Solutions",
     description:
       "We customize our services to meet your specific security and staffing requirements, ensuring optimal results.",
+    img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=440&q=80",
   },
   {
     icon: Clock,
     title: "24/7 Support",
     description:
       "Round-the-clock monitoring and support to address security incidents and client needs at any time.",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=440&q=80",
   },
 ];
 
-// Trusted clients logos
 const clients = [
   { name: "Client 1", logo: "/placeholder.svg" },
   { name: "Client 2", logo: "/placeholder.svg" },
@@ -47,15 +49,23 @@ const WhyChooseUs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
-            <div 
+            <div
               key={index}
-              className="bg-background rounded-lg p-8 shadow-md hover:shadow-xl transition-shadow duration-300 border border-border/50"
+              className="bg-background rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border border-border/50 flex flex-col items-center"
             >
-              <div className="bg-cyber-red/10 rounded-full p-3 w-16 h-16 flex items-center justify-center mb-6">
-                <feature.icon className="text-cyber-red h-8 w-8" />
+              <img
+                src={feature.img}
+                alt={feature.title}
+                className="w-full h-40 object-cover rounded-t-lg"
+                loading="lazy"
+              />
+              <div className="p-8 flex flex-col items-center">
+                <div className="bg-cyber-red/10 rounded-full p-3 w-16 h-16 flex items-center justify-center mb-6 shadow-lg">
+                  <feature.icon className="text-cyber-red h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                <p className="text-muted-foreground text-center">{feature.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -68,8 +78,8 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Client logos auto-scrolling section */}
-        <div className="relative overflow-hidden">
-          <div className="flex animate-scroll">
+        <div className="relative overflow-x-auto">
+          <div className="flex animate-scroll min-w-max" style={{ animationDuration: "30s" }}>
             {clients.concat(clients).map((client, index) => (
               <div 
                 key={index} 
@@ -79,6 +89,7 @@ const WhyChooseUs = () => {
                   src={client.logo}
                   alt={client.name}
                   className="h-16 w-auto object-contain"
+                  loading="lazy"
                 />
               </div>
             ))}

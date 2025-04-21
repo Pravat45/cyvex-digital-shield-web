@@ -3,6 +3,14 @@ import { Shield, Users, HeartPulse, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+// Unsplash photo IDs for each service
+const serviceImages = [
+  "photo-1518770660439-4636190af475", // Cybersecurity
+  "photo-1605810230434-7631ac76ec81", // Staffing Solutions
+  "photo-1472396961693-142e6e269027", // Healthcare Services
+  "photo-1487058792275-0ad4aaf24ca7", // Software Development
+];
+
 const services = [
   {
     icon: Shield,
@@ -10,6 +18,7 @@ const services = [
     description:
       "Comprehensive security solutions to protect your digital assets from evolving cyber threats with 24/7 monitoring and response.",
     link: "/services#cyber-security",
+    img: `https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80`,
   },
   {
     icon: Users,
@@ -17,6 +26,7 @@ const services = [
     description:
       "Connect with top-tier IT talent through our specialized recruitment and staffing services tailored to your needs.",
     link: "/services#staffing-solutions",
+    img: `https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&q=80`,
   },
   {
     icon: HeartPulse,
@@ -24,6 +34,7 @@ const services = [
     description:
       "Expert healthcare staffing solutions for medical facilities including ICU, OR, pediatrics, and travel nursing.",
     link: "/services#healthcare-services",
+    img: `https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&q=80`,
   },
   {
     icon: Code,
@@ -31,6 +42,7 @@ const services = [
     description:
       "Custom software solutions designed and developed to address your unique business challenges and requirements.",
     link: "/services#software-development",
+    img: `https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&q=80`,
   },
 ];
 
@@ -50,18 +62,26 @@ const ServicesHighlights = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-background rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-border/50"
+              className="bg-background rounded-lg p-0 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-border/50"
             >
-              <div className="bg-cyber-red/10 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-5">
-                <service.icon className="text-cyber-red h-8 w-8" />
+              <img
+                src={service.img}
+                alt={service.title}
+                className="w-full h-44 object-cover rounded-t-lg"
+                loading="lazy"
+              />
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="bg-cyber-red/10 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-5 mt-[-2.5rem] shadow-lg mx-auto">
+                  <service.icon className="text-cyber-red h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-center">{service.title}</h3>
+                <p className="text-muted-foreground mb-6 flex-grow text-center">{service.description}</p>
+                <Link to={service.link}>
+                  <Button variant="outline" className="w-full hover:bg-cyber-red hover:text-white transition-colors">
+                    Learn More
+                  </Button>
+                </Link>
               </div>
-              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground mb-6 flex-grow">{service.description}</p>
-              <Link to={service.link}>
-                <Button variant="outline" className="w-full hover:bg-cyber-red hover:text-white transition-colors">
-                  Learn More
-                </Button>
-              </Link>
             </div>
           ))}
         </div>
