@@ -1,6 +1,5 @@
-
 import { Star, Clock, ShieldCheck } from "lucide-react";
-import informatica from "../../assets/infomatica.jpeg"
+import informatica from "../../assets/infomatica.jpeg";
 import kforce from "../../assets/kforce.png";
 import oxford from "../../assets/oxford.png";
 import cbts from "../../assets/cbts.png";
@@ -62,8 +61,8 @@ const WhyChooseUs = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
           <div className="w-24 h-1 bg-cyber-red mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            At Cyvex Lab, we combine technical expertise with industry knowledge to deliver
-            exceptional security and staffing solutions.
+            At Cyvex Lab, we combine technical expertise with industry knowledge
+            to deliver exceptional security and staffing solutions.
           </p>
         </div>
 
@@ -84,27 +83,29 @@ const WhyChooseUs = () => {
                   <feature.icon className="text-cyber-red h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground text-center">{feature.description}</p>
+                <p className="text-muted-foreground text-center">
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mb-10">
-          <h3 className="text-2xl font-semibold mb-4">Trusted by Industry Leaders</h3>
+          <h3 className="text-2xl font-semibold mb-4">
+            Trusted by Industry Leaders
+          </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            We work with organizations across various sectors to enhance their security posture and address staffing needs.
+            We work with organizations across various sectors to enhance their
+            security posture and address staffing needs.
           </p>
         </div>
 
         {/* Client logos auto-scrolling section */}
-        <div className="relative overflow-none">
-          <div className="flex animate-scroll min-w-max" style={{ animationDuration: "50s" }}>
-            {clients.concat(clients).map((client, index) => (
-              <div 
-                key={index} 
-                className="mx-8 flex-shrink-0 transition-all"
-              >
+        <div className="relative overflow-hidden w-full">
+          <div className="flex w-max animate-scroll gap-8">
+            {[...clients, ...clients].map((client, index) => (
+              <div key={index} className="flex-shrink-0">
                 <img
                   src={client.logo}
                   alt={client.name}
