@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import First from '../../assets/first.jpg';
-import Second from '../../assets/second.jpg';
-import Third from '../../assets/third.jpg';
+import First from "../../assets/First.jpg";
+import Second from "../../assets/second.jpg";
+import Third from "../../assets/third.jpg";
 
 // Image slider for the hero section
 
@@ -24,21 +24,21 @@ const HeroSection = () => {
     <div className="relative h-screen w-full overflow-hidden">
       {/* Background image slider */}
       <div className="absolute inset-0 z-0">
-  {images.map((image, index) => (
-    <div
-      key={index}
-      className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-        index === currentImage ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${image})` }}
-      />
-      {/* Removed: <div className="absolute inset-0 bg-black/40" /> */}
-    </div>
-  ))}
-</div>
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentImage ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${image})` }}
+            />
+            {/* Removed: <div className="absolute inset-0 bg-black/40" /> */}
+          </div>
+        ))}
+      </div>
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center h-full">
