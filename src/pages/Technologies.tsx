@@ -1,4 +1,4 @@
-import { Shield, Cpu, Cloud, Code, Lock, Database } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -11,63 +11,93 @@ import Layout from "@/components/layout/Layout";
 
 const technologies = [
   {
-    icon: <Shield className="h-10 w-10 text-cyber-red" />,
-    title: "Network Security",
+    name: "Identity Governance (IGA)",
+    icon: <ShieldCheck className="h-10 w-10 text-cyber-red" />,
     description:
-      "Advanced firewall configurations, intrusion detection systems, and network monitoring tools to protect your organizational infrastructure.",
-    tools: ["Palo Alto Networks", "Cisco", "Fortinet", "Wireshark"],
-    image:
-      "https://images.unsplash.com/photo-1562408590-e32931084e23?w=700&q=80",
+      "We implement IGA to ensure users have the right access at the right time, helping organizations enforce access policies and stay compliant.",
+    tools: ["SailPoint", "Saviynt", "Oracle Identity Governance"],
+    image: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4",
   },
   {
-    icon: <Lock className="h-10 w-10 text-cyber-red" />,
-    title: "Identity & Access Management",
+    name: "Identity Management (IDM)",
+    icon: <ShieldCheck className="h-10 w-10 text-cyber-red" />,
     description:
-      "Comprehensive solutions for controlling user access to critical systems and sensitive data across your organization.",
-    tools: ["Okta", "Microsoft Azure AD", "OneLogin", "Auth0"],
+      "Our IDM solutions automate user provisioning, streamline lifecycle management, and enable secure access across platforms.",
+    tools: ["Okta", "Azure AD", "Ping Identity", "ForgeRock"],
     image:
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=700&q=80",
+      "https://img.freepik.com/free-photo/application-contact-communication-connection-concept_53876-132755.jpg?t=st=1745320169~exp=1745323769~hmac=38367da33db0b4b7b7c6ff6b08e75f678f69620e7830b16c094cfe070d30efef&w=900",
   },
   {
-    icon: <Cloud className="h-10 w-10 text-cyber-red" />,
-    title: "Cloud Security",
+    name: "SailPoint",
+    icon: <ShieldCheck className="h-10 w-10 text-cyber-red" />,
     description:
-      "Securing cloud environments and workloads with specialized tools and configurations for major cloud providers.",
-    tools: [
-      "AWS Security Hub",
-      "Azure Sentinel",
-      "Google Cloud Security",
-      "CloudGuard",
-    ],
+      "We help organizations deploy SailPoint for modern identity governance, access reviews, and risk-based access controls.",
+    tools: ["SailPoint IdentityNow", "AI-Driven Governance"],
     image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=80",
+      "https://cdn.gca.net/wp-content/uploads/2022/02/SailPoint-AI-Identity-Management-Diagram.png",
   },
   {
-    icon: <Cpu className="h-10 w-10 text-cyber-red" />,
-    title: "Endpoint Protection",
+    name: "CyberArk",
+    icon: <ShieldCheck className="h-10 w-10 text-cyber-red" />,
     description:
-      "Next-generation antivirus and endpoint detection and response (EDR) solutions to secure all devices in your network.",
-    tools: ["CrowdStrike", "SentinelOne", "Carbon Black", "Trend Micro"],
+      "We deploy CyberArk to secure privileged access, manage credentials, and monitor sessions to prevent insider and external threats.",
+    tools: ["CyberArk PAM", "Password Vault", "Session Manager"],
     image:
-      "https://images.unsplash.com/photo-1588508065123-287b28e013da?w=700&q=80",
+      "https://www.manufacturingtodayindia.com/cloud/2024/05/24/CyberArk-CORA-AI-Graphic.png",
   },
   {
-    icon: <Code className="h-10 w-10 text-cyber-red" />,
-    title: "Application Security",
+    name: "Saviynt",
+    icon: <ShieldCheck className="h-10 w-10 text-cyber-red" />,
     description:
-      "Securing software development lifecycles and implementing robust application vulnerability management.",
-    tools: ["Checkmarx", "OWASP ZAP", "SonarQube", "Veracode"],
+      "We integrate Saviynt’s cloud-native identity governance to simplify access reviews, manage identities, and meet compliance mandates.",
+    tools: ["Saviynt IGA", "Cloud Privileged Access Management"],
     image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&q=80",
+      "https://img.freepik.com/free-photo/futuristic-technology-concept_23-2151908113.jpg?t=st=1745320202~exp=1745323802~hmac=56a59609b0d48fa86f062cbc6dc00c2abd5079abc665b6060361942276de1a56&w=1060",
   },
   {
-    icon: <Database className="h-10 w-10 text-cyber-red" />,
-    title: "Data Protection",
+    name: "Access Management",
+    icon: <ShieldCheck className="h-10 w-10 text-cyber-red" />,
     description:
-      "Comprehensive data encryption, access controls, and data loss prevention strategies for sensitive information.",
-    tools: ["Varonis", "Digital Guardian", "Symantec DLP", "McAfee DLP"],
+      "Our access management solutions enforce secure login mechanisms, SSO, adaptive MFA, and federated identity access.",
+    tools: ["Okta", "Ping Identity", "Auth0", "Keycloak"],
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80",
+      "https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041856.jpg?t=st=1745320333~exp=1745323933~hmac=637d1487fc2cfc8198d5936d7ff74c835a5e35acfb874a9a3a4d5704b81480d7&w=1380",
+  },
+  {
+    name: "PingIdentity",
+    icon: <ShieldCheck className="h-10 w-10 text-cyber-red" />,
+    description:
+      "Ping Identity provides secure, seamless access using intelligent SSO and MFA. We help implement it to support zero-trust strategies.",
+    tools: ["PingOne", "PingFederate", "PingAccess"],
+    image:
+      "https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150062008.jpg?t=st=1745320287~exp=1745323887~hmac=1b67a2714a1735870537fd7df70e3a31c56fe9601a1b43f66c3393cb4580f1c9&w=996",
+  },
+  {
+    name: "Okta",
+    icon: <ShieldCheck className="h-10 w-10 text-cyber-red" />,
+    description:
+      "We integrate Okta’s cloud-based identity platform for universal directory, secure authentication, and frictionless SSO experiences.",
+    tools: ["Okta Workforce Identity", "Okta Customer Identity Cloud"],
+    image:
+      "https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041845.jpg?t=st=1745320420~exp=1745324020~hmac=4f9f4a152acab9ce4acfd6838e5ea0162cde4d25d289bb43d16f6882fe746ef3&w=826",
+  },
+  {
+    name: "DevOps",
+    icon: <ShieldCheck className="h-10 w-10 text-cyber-red" />,
+    description:
+      "We embed security into DevOps to automate secure CI/CD pipelines, infrastructure as code, and compliance in modern engineering workflows.",
+    tools: ["Jenkins", "GitLab CI", "Terraform", "Checkmarx", "SonarQube"],
+    image:
+      "https://img.freepik.com/premium-photo/cloudnative-apps-cloudnative-technologies-conceptual-illustration_1026678-78.jpg?w=1380",
+  },
+  {
+    name: "Healthcare Security",
+    icon: <ShieldCheck className="h-10 w-10 text-cyber-red" />,
+    description:
+      "We provide identity and access control tailored to the healthcare sector, ensuring patient data security and HIPAA compliance.",
+    tools: ["Cerner Integration", "Epic IAM", "Audit & Compliance Dashboards"],
+    image:
+      "https://img.freepik.com/free-photo/medical-banner-with-doctor-wearing-glove_23-2149611205.jpg?t=st=1745320590~exp=1745324190~hmac=c0279a31f2daba4e175d3696deddca8c40e3e355d3367b9171dec72b49cd5328&w=996",
   },
 ];
 
@@ -112,14 +142,14 @@ const Technologies = () => {
                 <div className="h-48 overflow-hidden">
                   <img
                     src={tech.image}
-                    alt={tech.title}
+                    alt={tech.name}
                     className="w-full h-full object-cover transition-transform hover:scale-105"
                   />
                 </div>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 mb-2">
                     {tech.icon}
-                    {tech.title}
+                    {tech.name}
                   </CardTitle>
                   <CardDescription className="text-foreground/80">
                     {tech.description}

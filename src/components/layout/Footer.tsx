@@ -17,41 +17,49 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
-          <div>
-            <Link to="/" className={`flex items-center space-x-2 `}>
+          <div className="flex flex-col items-center space-y-4 text-center max-w-md mx-auto">
+            {/* Logo */}
+            <Link to="/" className="pt-2">
               <img
                 src={logo}
                 alt="Cyvex Lab Logo"
-                className="h-12 md:h-16 lg:h-20 w-auto"
+                className="h-32 md:h-40 lg:h-44 w-auto"
               />
             </Link>
 
-            <p className="text-gray-300 mb-4">
+            {/* Description */}
+            <p className="text-gray-300 text-sm leading-relaxed">
               Leading provider of cybersecurity solutions, healthcare and IT
               staffing, and enterprise security technology implementation.
             </p>
+
+            {/* Social Icons */}
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-300 hover:text-cyber-red transition-colors"
+                aria-label="Facebook"
+                className="text-gray-300 hover:text-cyber-red"
               >
                 <Facebook size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-300 hover:text-cyber-red transition-colors"
+                aria-label="Twitter"
+                className="text-gray-300 hover:text-cyber-red"
               >
                 <Twitter size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-300 hover:text-cyber-red transition-colors"
+                aria-label="LinkedIn"
+                className="text-gray-300 hover:text-cyber-red"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-300 hover:text-cyber-red transition-colors"
+                aria-label="Instagram"
+                className="text-gray-300 hover:text-cyber-red"
               >
                 <Instagram size={20} />
               </a>

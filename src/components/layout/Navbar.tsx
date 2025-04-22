@@ -51,19 +51,17 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/90 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+        isScrolled ? "bg-white/90 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className={`flex items-center space-x-2 ${textColor}`}>
+          <Link to="/" className={`flex items-center space-x-6 ${textColor}`}>
             <img
               src={logo}
               alt="Cyvex Lab Logo"
-              className="h-12 md:h-16 lg:h-20 w-auto"
+              className="h-48 md:h-56 lg:h-64 w-auto pt-4"
             />
           </Link>
 
@@ -124,7 +122,7 @@ const Navbar = () => {
           {/* Contact CTA */}
           <div className="hidden lg:block">
             <Button variant="default" className="font-medium" asChild>
-              <Link to="/contact" className={'text-white'}>
+              <Link to="/contact" className={"text-white"}>
                 Get Started
               </Link>
             </Button>
