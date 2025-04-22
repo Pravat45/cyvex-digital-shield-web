@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,20 +23,20 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/careers" element={<Career />} />
-            <Route path="/industries" element={<Industries />} />
-            <Route path="/technologies" element={<Technologies />} />
-            <Route path="/our-work" element={<OurWork />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+        {/* <Layout> */}
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/careers" element={<Career />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/technologies" element={<Technologies />} />
+          <Route path="/our-work" element={<OurWork />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        {/* </Layout> */}
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
