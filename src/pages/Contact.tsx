@@ -179,11 +179,11 @@ const Contact = () => {
                 <div>
                   <h3 className="font-medium">Our Headquarters</h3>
                   <p className="text-muted-foreground">
-                    123 Tech Avenue
+                    5725 corporate way ste 206,
                     <br />
-                    Suite 500
+                    west palm beach
                     <br />
-                    San Francisco, CA 94107
+                    FL, 33407, United States
                   </p>
                 </div>
               </div>
@@ -194,8 +194,10 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-medium">Phone</h3>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                  <p className="text-muted-foreground">Mon-Fri, 8am-6pm PST</p>
+                  <p className="text-muted-foreground">+1 (984) 382-3218 ,</p>
+                  <p className="text-muted-foreground">
+                    Monday - Friday 8am - 5pm EST
+                  </p>
                 </div>
               </div>
 
@@ -205,8 +207,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-muted-foreground">info@cyvexlab.com</p>
-                  <p className="text-muted-foreground">support@cyvexlab.com</p>
+                  <p className="text-muted-foreground">hr@cyvexlab.com</p>
+                  {/* <p className="text-muted-foreground">support@cyvexlab.com</p> */}
                 </div>
               </div>
             </div>
