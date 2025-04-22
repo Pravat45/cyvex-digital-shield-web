@@ -1,6 +1,12 @@
-
 import { Link } from "react-router-dom";
-import { Shield, Facebook, Twitter, Linkedin, Instagram, Send } from "lucide-react";
+import {
+  Shield,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Send,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import logo from "../../assets/Logo.png";
@@ -12,29 +18,41 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-          <Link to="/" className={`flex items-center space-x-2 `}>
-            <img
-              src={logo}
-              alt="Cyvex Lab Logo"
-              className="h-12 md:h-16 lg:h-20 w-auto"
-            />
-          </Link>
+            <Link to="/" className={`flex items-center space-x-2 `}>
+              <img
+                src={logo}
+                alt="Cyvex Lab Logo"
+                className="h-12 md:h-16 lg:h-20 w-auto"
+              />
+            </Link>
 
             <p className="text-gray-300 mb-4">
-              Leading provider of cybersecurity solutions, healthcare and IT staffing,
-              and enterprise security technology implementation.
+              Leading provider of cybersecurity solutions, healthcare and IT
+              staffing, and enterprise security technology implementation.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-cyber-red transition-colors">
+              <a
+                href="#"
+                className="text-gray-300 hover:text-cyber-red transition-colors"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-cyber-red transition-colors">
+              <a
+                href="#"
+                className="text-gray-300 hover:text-cyber-red transition-colors"
+              >
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-cyber-red transition-colors">
+              <a
+                href="#"
+                className="text-gray-300 hover:text-cyber-red transition-colors"
+              >
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-cyber-red transition-colors">
+              <a
+                href="#"
+                className="text-gray-300 hover:text-cyber-red transition-colors"
+              >
                 <Instagram size={20} />
               </a>
             </div>
@@ -136,10 +154,16 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Cyvex Lab. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <Link to="/privacy" className="text-sm text-gray-400 hover:text-gray-300">
+              <Link
+                to="/privacy"
+                className="text-sm text-gray-400 hover:text-gray-300"
+              >
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-sm text-gray-400 hover:text-gray-300">
+              <Link
+                to="/terms"
+                className="text-sm text-gray-400 hover:text-gray-300"
+              >
                 Terms of Service
               </Link>
             </div>
