@@ -19,10 +19,10 @@ const servicesDropdown = [
 
 const navLinks = [
   { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" }, // 👈 Moved here
   { name: "Industries", path: "/industries" },
   { name: "Technologies", path: "/technologies" },
   { name: "Our Work", path: "/our-work" },
-  { name: "About Us", path: "/about" },
   { name: "Careers", path: "/careers" },
   { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
@@ -67,19 +67,22 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex space-x-1 items-center">
-            {navLinks.map((link) =>
-              link.name === "Home" ? (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`px-3 py-2 text-sm font-medium ${textColor} hover:bg-black hover:text-white rounded-md transition-colors duration-200`}
-                >
-                  {link.name}
-                </Link>
-              ) : null
-            )}
+            {navLinks.map((link, index) => {
+              if (link.name === "Home" || link.name === "About Us") {
+                return (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    className={`px-3 py-2 text-sm font-medium ${textColor} hover:bg-black hover:text-white rounded-md transition-colors duration-200`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              }
+              return null;
+            })}
 
-            {/* Services Dropdown */}
+            {/* Services Dropdown after About Us */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
@@ -103,10 +106,10 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Other Links */}
+            {/* Render the remaining nav links */}
             {navLinks
               .filter(
-                (link) => link.name !== "Home" && link.name !== "Services"
+                (link) => link.name !== "Home" && link.name !== "About Us"
               )
               .map((link) => (
                 <Link

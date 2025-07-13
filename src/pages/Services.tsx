@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import {
   Shield,
@@ -13,11 +14,24 @@ import {
 import { Button } from "@/components/ui/button";
 
 const Services = () => {
+  const location = useLocation();
+
   useEffect(() => {
     document.title = "Services | Cyvex Lab";
   }, []);
 
-  // Our main service categories
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        setTimeout(() => {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const serviceCategories = [
     {
       id: "cyber-security",
@@ -126,7 +140,8 @@ const Services = () => {
       title: "Software Development",
       description:
         "Custom software solutions tailored to your specific business requirements and challenges.",
-      image: "https://img.freepik.com/premium-photo/it-developers-discussing-with-point-website-coding-system-infobahn_31965-647960.jpg?w=900",
+      image:
+        "https://img.freepik.com/premium-photo/it-developers-discussing-with-point-website-coding-system-infobahn_31965-647960.jpg?w=900",
       services: [
         {
           icon: Code,
@@ -158,7 +173,6 @@ const Services = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
       <section className="pt-32 pb-16 bg-cyber-black text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
@@ -174,12 +188,11 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Service Categories */}
       {serviceCategories.map((category, index) => (
         <section
           key={category.id}
           id={category.id}
-          className={`section-padding ${
+          className={`section-padding scroll-mt-32 ${
             index % 2 === 1 ? "bg-secondary/50" : ""
           }`}
         >
@@ -209,12 +222,6 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
-
-                <div className="mt-10">
-                  <Button className="bg-cyber-red hover:bg-cyber-red/90 text-white">
-                    Learn More
-                  </Button>
-                </div>
               </div>
 
               <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
@@ -229,7 +236,6 @@ const Services = () => {
         </section>
       ))}
 
-      {/* CTA Section */}
       <section className="py-16 bg-cyber-black text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">

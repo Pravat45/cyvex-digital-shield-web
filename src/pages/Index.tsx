@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/home/HeroSection";
 import ServicesHighlights from "@/components/home/ServicesHighlights";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
+import FloatingChatBot from "@/components/home/FloatingChatBot";
 
 const Index = () => {
   useEffect(() => {
@@ -14,6 +15,7 @@ const Index = () => {
       <HeroSection />
       <ServicesHighlights />
       <WhyChooseUs />
+      <FloatingChatBot />
     </Layout>
   );
 };

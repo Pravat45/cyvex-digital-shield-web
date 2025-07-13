@@ -50,7 +50,9 @@ const Footer = () => {
                 <Twitter size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/cyvexlab/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="text-gray-300 hover:text-cyber-red"
               >

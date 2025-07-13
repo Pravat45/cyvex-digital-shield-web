@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import { Link } from "react-router-dom";
 
 const technologies = [
   {
@@ -173,8 +174,12 @@ const Technologies = () => {
           </div>
 
           <div className="text-center mt-14">
-            <Button size="lg" className="bg-cyber-red hover:bg-cyber-red/90">
-              Discuss Your Technology Needs
+            <Button
+              size="lg"
+              className="bg-cyber-red hover:bg-cyber-red/90"
+              asChild
+            >
+              <Link to="/contact">Discuss Your Technology Needs</Link>
             </Button>
           </div>
         </div>

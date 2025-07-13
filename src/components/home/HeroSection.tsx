@@ -1,13 +1,29 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import First from "../../assets/First.jpg";
-import Second from "../../assets/second.jpg";
-import Third from "../../assets/third.jpg";
+import First from "../../assets/First.webp";
+import Second from "../../assets/second.webp";
+import Third from "../../assets/third.webp";
+import { Link } from "react-router-dom";
 
 // Image slider for the hero section
 
-const images = [First, Second, Third];
+// const images = [First, Second, Third];
+
+const images = [
+  {
+    avif: "https://ik.imagekit.io/ruvozwl79/First.avif?updatedAt=1747163384602",
+    webp: "https://ik.imagekit.io/ruvozwl79/First.webp?updatedAt=1747163548624",
+  },
+  {
+    avif: "https://ik.imagekit.io/ruvozwl79/second.avif?updatedAt=1747163384462",
+    webp: "https://ik.imagekit.io/ruvozwl79/second.webp?updatedAt=1747163548524",
+  },
+  {
+    avif: "https://ik.imagekit.io/ruvozwl79/third.avif?updatedAt=1747163384027",
+    webp: "https://ik.imagekit.io/ruvozwl79/second.webp?updatedAt=1747163548524",
+  },
+];
 
 const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -22,26 +38,36 @@ const HeroSection = () => {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      {/* Background image slider */}
-      <div className="absolute inset-0 z-0">
+      {/* 🔁 Sliding Image Track */}
+      <div
+        className="absolute inset-0 flex transition-transform duration-1000 ease-in-out z-0"
+        style={{
+          width: `${images.length * 100}%`,
+          transform: `translateX(-${currentImage * (100 / images.length)}%)`,
+        }}
+      >
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentImage ? "opacity-100" : "opacity-0"
-            }`}
+            className="w-full flex-shrink-0 h-full"
+            style={{ width: `${100 / images.length}%` }}
           >
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${image})` }}
-            />
-            {/* Removed: <div className="absolute inset-0 bg-black/40" /> */}
+            <picture>
+              <source srcSet={image.avif} type="image/avif" />
+              <source srcSet={image.webp} type="image/webp" />
+              <img
+                src={image.webp}
+                loading={index === 0 ? "eager" : "lazy"}
+                alt={`Hero slide ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </picture>
           </div>
         ))}
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center h-full">
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
         <div className="container mx-auto px-4 md:px-6 text-center text-white">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -55,15 +81,20 @@ const HeroSection = () => {
                 size="lg"
                 className="bg-cyber-red text-white rounded-full px-8"
                 variant="outline"
+                asChild
               >
-                Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                <Link to="/contact">
+                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
+
               <Button
                 size="lg"
                 variant="outline"
                 className="bg-white text-red-600 border border-red-600 hover:bg-cyber-red/90 hover:text-white rounded-full px-8 transition-colors duration-300"
+                asChild
               >
-                Learn More
+                <Link to="/technologies">Learn More</Link>
               </Button>
             </div>
           </div>
